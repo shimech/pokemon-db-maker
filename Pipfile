@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+beautifulsoup4 = "*"
+pandas = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+start = "python src/main.py"
+crawl = "python src/main.py --crawl"
+scrap = "python src/main.py --scrap"
+docker = "sh command/docker.sh"
