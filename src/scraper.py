@@ -29,7 +29,7 @@ class Scraper:
             pokemon.abilities = cls.__get_abilities(detail_page_bs)
             pokemon.status = cls.__get_status(detail_page_bs)
             pokemon.is_final = cls.__get_is_final(detail_page_bs)
-            pokemon.region = cls.__get_region(pokemon.no)
+            pokemon.region = cls.__get_region(pokemon.no, pokemon.name)
 
             print(pokemon)
 
@@ -160,8 +160,13 @@ class Scraper:
         return True
 
     @staticmethod
-    def __get_region(no):
+    def __get_region(no, name):
         no = int(no)
+
+        if "アローラ" in name:
+            return 7
+        elif "ガラル" in name:
+            return 8
 
         if no <= 151:
             return 1
