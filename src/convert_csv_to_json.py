@@ -28,7 +28,7 @@ COLUMNS = {
 
 
 def main():
-    pokemon_df = pd.read_csv(CSV_PATH, encoding="shift-jis")
+    pokemon_df = pd.read_csv(CSV_PATH, encoding="utf-8")
     pokemon_df = pokemon_df.rename(columns=COLUMNS)
     pokemon_df = pokemon_df.fillna("")
 
