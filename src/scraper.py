@@ -40,7 +40,7 @@ class Scraper:
         csv_path = Utils.make_dir(os.path.dirname(
             os.path.dirname(cls.FILE_PATH)), "output")
         pokemon_df.to_csv(os.path.join(csv_path, "pokemon_db.csv"),
-                          index=False, encoding="shift-jis")
+                          index=False, encoding="utf-8")
         print("FILE: {} を出力しました。".format(
             os.path.join(csv_path, "pokemon_db.csv")))
 

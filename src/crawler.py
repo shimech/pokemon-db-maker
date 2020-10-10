@@ -28,7 +28,7 @@ class Crawler:
 
             detail_page_url = Settings.EXCEPT_POKEMON_URLS.get(a.text)
             if detail_page_url is None:
-                detail_page_url = Settings.BASE_URL + a["href"][2:]
+                detail_page_url = Settings.BASE_URL + a["href"]
             detail_page_bs = Utils.get_html(detail_page_url)
 
             no = row.find("td", {"class": "c1"}).text

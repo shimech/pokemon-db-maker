@@ -1,6 +1,6 @@
 class Settings:
-    BASE_URL = "https://yakkun.com/swsh/"
-    STATUS_LIST_URL = BASE_URL + "stats_list.htm?mode=all"
+    BASE_URL = "https://yakkun.com"
+    STATUS_LIST_URL = BASE_URL + "/swsh/stats_list.htm?mode=all"
 
     STATUS = {
         "HP": "hitpoint",
@@ -56,7 +56,7 @@ class Settings:
         "メガカイロス": "https://yakkun.com/sm/zukan/n127m",
         "メガギャラドス": "https://yakkun.com/sm/zukan/n130m",
         "メガプテラ": "https://yakkun.com/sm/zukan/n142m",
-        "メガニュウツーX": "https://yakkun.com/sm/zukan/n150x",
+        "メガミュウツーX": "https://yakkun.com/sm/zukan/n150x",
         "メガミュウツーY": "https://yakkun.com/sm/zukan/n150y",
         "メガデンリュウ": "https://yakkun.com/sm/zukan/n181m",
         "メガハガネール": "https://yakkun.com/sm/zukan/n208m",
