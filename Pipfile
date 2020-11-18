@@ -8,13 +8,15 @@ verify_ssl = true
 [packages]
 beautifulsoup4 = "*"
 pandas = "*"
+argumentparser = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.8"
 
 [scripts]
-start = "python src/main.py"
-crawl = "python src/main.py --crawl"
-scrap = "python src/main.py --scrap"
-docker = "sh bin/docker.sh"
-json = "python src/convert_csv_to_json.py"
+build = "sh ./bin/build.sh"
+start = "sh ./bin/run.sh"
+crawler = "sh ./bin/crawler.sh"
+scraper = "sh ./bin/scraper.sh"
+json = "sh ./bin/json.sh"
