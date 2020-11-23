@@ -10,6 +10,7 @@ beautifulsoup4 = "*"
 pandas = "*"
 argumentparser = "*"
 autopep8 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"

@@ -10,8 +10,10 @@ class Crawler:
     def run(cls):
         print("### クローリング開始 ###")
 
-        html_dir_path = Utils.make_dir(
-            os.path.dirname(os.path.dirname(cls.FILE_PATH)), "html")
+        html_dir_path = os.path.join(os.path.dirname(
+            os.path.dirname(cls.FILE_PATH)), "html")
+        Utils.remove_dir(html_dir_path)
+        Utils.make_dir(html_dir_path)
 
         status_list_page_dir_path = Utils.make_dir(
             html_dir_path, "status_list_page")
@@ -22,18 +24,17 @@ class Crawler:
         detail_page_dir_path = Utils.make_dir(html_dir_path, "detail_page")
         status_table_bs = status_list_bs.find(
             "table", {"class": "center stupidtable stupidtable_common"})
-        rows = status_table_bs.find_all("tr")
-        for row in rows[1:]:
-            a = row.find("a")
+        trs = status_table_bs.find_all("tr")
+        for tr in trs[1:]:
+            a = tr.find("a")
 
-            detail_page_url = Settings.EXCEPT_POKEMON_URLS.get(a.text)
-            if detail_page_url is None:
-                detail_page_url = Settings.BASE_URL + a["href"]
+            detail_page_url = Settings.BASE_URL + a["href"]
             detail_page_bs = Utils.get_html(detail_page_url)
 
-            no = row.find("td", {"class": "c1"}).text
+            no = tr.find("td", {"class": "c1"}).text
             file_name = "{}_{}.html".format(no, a.text)
-            Utils.write_html(detail_page_bs.prettify(),
-                             detail_page_dir_path, file_name)
+            if not "相棒" in a.text:
+                Utils.write_html(detail_page_bs.prettify(),
+                                 detail_page_dir_path, file_name)
 
         print("### クローリング終了 ###")

@@ -23,7 +23,8 @@ COLUMNS = {
     "すばやさ": "speed",
     "合計": "total",
     "最終進化": "is_final",
-    "地方": "region"
+    "地方": "region",
+    "同一種族値": "is_same_status"
 }
 
 
@@ -53,7 +54,8 @@ def main():
                 "total": row["total"]
             },
             "isFinal": row["is_final"],
-            "region": row["region"]
+            "region": row["region"],
+            "isSameStatus": row["is_same_status"]
         }
         pokemon_dicts.append(pokemon_dict)
 

@@ -2,7 +2,7 @@ from settings import Settings
 
 
 class Pokemon:
-    def __init__(self, no=None, name=None, types=None, abilities=None, status=None, is_final=None, region=None):
+    def __init__(self, no=None, name=None, types=None, abilities=None, status=None, is_final=None, region=None, is_same_status=None):
         if types is None:
             types = [None, None]
 
@@ -30,6 +30,7 @@ class Pokemon:
         self.status = status
         self.is_final = is_final
         self.region = region
+        self.is_same_status = is_same_status
 
     def __str__(self):
         return """
@@ -68,5 +69,6 @@ class Pokemon:
             self.status["speed"],
             self.status["total"],
             self.is_final,
-            Settings.REGIONS.get(self.region)
+            Settings.REGIONS.get(self.region),
+            self.is_same_status
         ]
