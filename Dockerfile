@@ -6,6 +6,7 @@ ADD . $work_dir
 
 WORKDIR $work_dir
 
-RUN pip install --upgrade pip && \
+RUN export LANG=C.UTF-8 && \
+    pip install --upgrade pip && \
     pip install pipenv && \
     pipenv install

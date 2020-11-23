@@ -37,6 +37,10 @@ class Scraper:
                 data=pokemon.reshape_to_list(), index=Settings.COLUMNS)
             pokemon_df = pokemon_df.append(pokemon_srs, ignore_index=True)
 
+        stat_columns = ["HP", "こうげき", "ぼうぎょ", "とくこう", "とくぼう", "すばやさ"]
+        stat_db = pokemon_df.loc[:, stat_columns].values.tolist()
+        pokemon_df["同一種族値"] = [Utils.is_same_status(
+            i, stat, stat_db) for i, stat in enumerate(stat_db)]
         csv_path = Utils.make_dir(os.path.dirname(
             os.path.dirname(cls.FILE_PATH)), "output")
         pokemon_df.to_csv(os.path.join(csv_path, "pokemon_db.csv"),
