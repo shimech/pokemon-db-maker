@@ -30,6 +30,8 @@ class Scraper:
             pokemon.status = cls.__get_status(detail_page_bs)
             pokemon.is_final = cls.__get_is_final(detail_page_bs)
             pokemon.region = cls.__get_region(pokemon.no, pokemon.name)
+            pokemon.is_mega_evolution = cls.__get_is_mega_evolution(
+                pokemon.name)
 
             print(pokemon)
 
@@ -188,3 +190,7 @@ class Scraper:
             return 7
         elif 809 < no:
             return 8
+
+    @staticmethod
+    def __get_is_mega_evolution(name):
+        return name in Settings.MEGA_EVOLUTION_NAMES
