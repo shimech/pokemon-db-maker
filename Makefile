@@ -13,6 +13,9 @@ docker-crawl:
 docker-scrape:
 	sh ./bin/scrape.sh
 
+docker-csv2json:
+	sh ./bin/csv2json.sh
+
 local-run:
 	poetry run python ./src/main.py
 
@@ -21,3 +24,6 @@ local-crawl:
 
 local-scrape:
 	poetry run python ./src/main.py --scrape
+
+local-csv2json:
+	poetry run python ./src/convert_csv2json.py
