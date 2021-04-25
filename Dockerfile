@@ -1,4 +1,4 @@
-FROM python:3.8.2
+FROM python:3.9.4
 
 ARG work_dir=/usr/local/work/
 
