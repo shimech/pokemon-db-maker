@@ -5,7 +5,7 @@ build:
 	sh ./bin/build.sh
 
 docker-run:
-	sh ./bin/run/sh
+	sh ./bin/run.sh
 
 docker-crawl:
 	sh ./bin/crawl.sh
