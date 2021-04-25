@@ -22185,35 +22185,6 @@
     "isSameStatus": false
   },
   {
-    "id": "59edd027aea594a9cca887a614c9d3d3",
-    "no": 658,
-    "name": "ゲッコウガ(サトシゲッコウガ)",
-    "type": [
-      "みず",
-      "あく"
-    ],
-    "ability": {
-      "normal": [
-        "きずなへんげ",
-        ""
-      ],
-      "special": ""
-    },
-    "status": {
-      "hitpoint": 72,
-      "attack": 145,
-      "block": 67,
-      "contact": 153,
-      "defense": 71,
-      "speed": 132,
-      "total": 640
-    },
-    "isFinal": true,
-    "region": "カロス",
-    "isMegaEvolution": false,
-    "isSameStatus": false
-  },
-  {
     "id": "ce19838543e74258edec1709996092b8",
     "no": 658,
     "name": "ゲッコウガ",
