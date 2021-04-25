@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run -it --rm -v $PWD:/usr/local/work -w /usr/local/work pokemon-db-maker pipenv run python ./src/main.py
+docker run -it --rm -v $PWD:/usr/local/app -w /usr/local/app pokemon-db-maker python ./src/main.py
