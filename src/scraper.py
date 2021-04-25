@@ -24,7 +24,7 @@ class Scraper:
             detail_page_bs = BeautifulSoup(html_str, "html.parser")
 
             pokemon.no, pokemon.name = re.match(
-                r".*/([0-9]{3})_(.+).html", detail_page_html_path).groups()
+                r".*/([0-9]+)_(.+).html", detail_page_html_path).groups()
             pokemon.types = cls.__get_types(detail_page_bs)
             pokemon.abilities = cls.__get_abilities(detail_page_bs)
             pokemon.status = cls.__get_status(detail_page_bs)
@@ -60,6 +60,7 @@ class Scraper:
     def __get_types(bs):
         type_ul_bs = bs.find("ul", {"class": "type"})
         type_imgs_bs = type_ul_bs.find_all("img")
+        # 単タイプの場合、2番目の要素にNoneを追加
         if len(type_imgs_bs) == 1:
             type_imgs_bs.append(None)
 

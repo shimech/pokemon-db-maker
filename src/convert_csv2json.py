@@ -1,5 +1,6 @@
 import os
 import json
+from hashlib import md5
 import pandas as pd
 
 
@@ -35,9 +36,9 @@ def main():
     pokemon_df = pokemon_df.fillna("")
 
     pokemon_dicts = []
-    for index, row in pokemon_df.iterrows():
+    for _, row in pokemon_df.iterrows():
         pokemon_dict = {
-            "id": index,
+            "id": md5(row["name"].encode()).hexdigest(),
             "no": row["id"],
             "name": row["name"],
             "type": [row["type1"], row["type2"]],
