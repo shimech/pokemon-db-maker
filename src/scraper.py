@@ -181,9 +181,9 @@ class Scraper:
             return 2
         elif 251 < no <= 386:
             return 3
-        elif 386 < no <= 494:
+        elif 386 < no <= 493:
             return 4
-        elif 494 < no <= 649:
+        elif 493 < no <= 649:
             return 5
         elif 649 < no <= 721:
             return 6
