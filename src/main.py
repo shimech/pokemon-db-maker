@@ -1,4 +1,3 @@
-import sys
 from argument_parser import ArgumentParser
 from crawler import Crawler
 from scraper import Scraper
