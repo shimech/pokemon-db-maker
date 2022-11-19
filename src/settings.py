@@ -1,6 +1,6 @@
 class Settings:
     BASE_URL = "https://yakkun.com"
-    STATUS_LIST_URL = BASE_URL + "/swsh/stats_list.htm?mode=all"
+    STATUS_LIST_URL = BASE_URL + "/sv/stats_list.htm?mode=all"
 
     ENCODING = "EUC-JP"
 
@@ -23,6 +23,8 @@ class Settings:
         6: "カロス",
         7: "アローラ",
         8: "ガラル",
+        9: "ヒスイ",
+        10: "パルデア"
     }
 
     COLUMNS = [

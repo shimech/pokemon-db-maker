@@ -174,6 +174,10 @@ class Scraper:
             return 7
         elif "ガラル" in name:
             return 8
+        elif "ヒスイ" in name:
+            return 9
+        elif "パルデア" in name:
+            return 10
 
         if no <= 151:
             return 1
@@ -189,8 +193,12 @@ class Scraper:
             return 6
         elif 721 < no <= 809:
             return 7
-        elif 809 < no:
+        elif 809 < no <= 898:
             return 8
+        elif 898 < no <= 905:
+            return 9
+        elif 905 < no:
+            return 10
 
     @staticmethod
     def __get_is_mega_evolution(name):

@@ -31,8 +31,13 @@ class Crawler:
             detail_page_url = Settings.BASE_URL + a["href"]
             detail_page_bs = Utils.get_html(detail_page_url)
 
+            if cls.__is_arceus(detail_page_bs):
+                print("アルセウスのデータであるため、サン・ムーンを再取得します。")
+                detail_page_bs = Utils.get_html(
+                    detail_page_url.replace("swsh", "sm"))
+
             no = tr.find("td", {"class": "c1"}).text
-            file_name = "{}_{}.html".format(no, a.text)
+            file_name = "{}_{}.html".format(no.zfill(4), a.text)
             if a.text in Settings.EXCEPT_POKEMON_NAMES:
                 print("{} は除外されました。".format(a.text))
             else:
@@ -40,3 +45,10 @@ class Crawler:
                                  detail_page_dir_path, file_name)
 
         print("### クローリング終了 ###")
+
+    @staticmethod
+    def __is_arceus(bs):
+        title_ul = bs.find("ul", {"class": "select_list"})
+        selected_li = title_ul.find("li", {"class": "selected"})
+        arceus_image = selected_li.find("i", {"class": "soft_legends"})
+        return arceus_image != None
