@@ -41,7 +41,7 @@ class Utils:
 
     @staticmethod
     def get_html(url, sleep_time=1.5, encoding=Settings.ENCODING):
-        response = requests.get(url)
+        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"})
         time.sleep(sleep_time)
         response.encoding = encoding
         bs = BeautifulSoup(response.text, "html.parser")
