@@ -179,6 +179,9 @@ class Scraper:
         elif "パルデア" in name:
             return 10
 
+        if name == "ガチグマ(あかつき)":
+            return 10
+
         if no <= 151:
             return 1
         elif 151 < no <= 251:
