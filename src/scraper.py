@@ -168,6 +168,15 @@ class Scraper:
 
     @staticmethod
     def __get_region(no, name):
+        region_by_name = {
+            "ガチグマ(アカツキ)": 10,
+            "ディアルガ(オリジンフォルム)": 9,
+            "パルキア(オリジンフォルム)": 9
+        }
+        region_id = region_by_name.get(name)
+        if region_id is not None:
+            return region_id
+
         no = int(no)
 
         if "アローラ" in name:
@@ -177,9 +186,6 @@ class Scraper:
         elif "ヒスイ" in name:
             return 9
         elif "パルデア" in name:
-            return 10
-
-        if name == "ガチグマ(あかつき)":
             return 10
 
         if no <= 151:
